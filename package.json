@@ -12,14 +12,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^2.24.0",
+    "apollo-server": "^2.25.2",
     "axios": "^0.21.1",
-    "dotenv": "^9.0.0",
-    "graphql": "^15.5.0",
+    "dotenv": "^9.0.2",
+    "graphql": "^15.5.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^7.26.0",
-    "nodemon": "^2.0.7"
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.12"
   }
 }
