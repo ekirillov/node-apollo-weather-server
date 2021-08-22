@@ -5,7 +5,6 @@ config();
 
 const server = new ApolloServer({
   schema: schema,
-  cors: { credentials: true, origin: "http://localhost:3000" },
 });
 
 server.listen().then(({ url }) => {
