@@ -16,6 +16,6 @@ export const typeDefs = gql`
   }
 
   extend type Query {
-    weatherReport(city: String!): WeatherReport
+    weatherReport(city: String!): WeatherReport!
   }
 `;
