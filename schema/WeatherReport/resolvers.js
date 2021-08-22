@@ -1,4 +1,5 @@
 import axios from "axios";
+import capitalize from "lodash/capitalize.js";
 
 export const resolvers = {
   Query: {
@@ -22,7 +23,7 @@ export const resolvers = {
         date: new Date(),
         weatherCondition: {
           id,
-          description,
+          description: capitalize(description),
           status,
           icon,
         },
