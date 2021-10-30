@@ -1,7 +1,7 @@
 import { gql } from "apollo-server";
 
 export const typeDefs = gql`
-  type WeatherReport {
+  type weatherReport {
     city: String!
     temperature: Float!
     date: Date!
@@ -16,6 +16,6 @@ export const typeDefs = gql`
   }
 
   extend type Query {
-    weatherReport(city: String!): WeatherReport!
+    weatherReport(city: String!): weatherReport!
   }
 `;
