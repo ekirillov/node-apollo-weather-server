@@ -1,16 +1,24 @@
-import { gql, makeExecutableSchema } from "apollo-server";
+import { gql } from "apollo-server";
+import { makeExecutableSchema } from "@graphql-tools/schema";
 import merge from "lodash/merge.js";
 import {
   typeDefs as weatherReportTypeDefs,
   resolvers as weatherReportResolvers,
 } from "./weatherReport/index.js";
 import {
+  typeDefs as loginTypeDefs,
+  resolvers as loginResolvers,
+} from "./login/index.js";
+import {
   typeDefs as DateScalarTypeDefs,
   resolvers as DateScalarResolvers,
 } from "./scalars/date.js";
 
-const Query = gql`
+const defaultTypeDefs = gql`
   type Query {
+    _empty: String
+  }
+  type Mutation {
     _empty: String
   }
 `;
@@ -18,10 +26,16 @@ const Query = gql`
 const defaultResolvers = {};
 
 export default makeExecutableSchema({
-  typeDefs: [Query, weatherReportTypeDefs, DateScalarTypeDefs],
+  typeDefs: [
+    defaultTypeDefs,
+    weatherReportTypeDefs,
+    DateScalarTypeDefs,
+    loginTypeDefs,
+  ],
   resolvers: merge(
     defaultResolvers,
     weatherReportResolvers,
-    DateScalarResolvers
+    DateScalarResolvers,
+    loginResolvers
   ),
 });
